@@ -1,5 +1,5 @@
-import matplotlib.pyplot as plt
 # this is just forward euler but using matplotlib instead of youplot
+import matplotlib.pyplot as plt
 
 Ts = 19 # temperature of surrounding celsius
 r = 0.025 # rate of cooling PER SECOND

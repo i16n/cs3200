@@ -1,9 +1,15 @@
+# this version allows you to interactively select a step size and see the forward euler plot in the terminal.
+# It works on mac
+# This file isn't necessarily part of my submission.
+
 import subprocess
 # notes
 # recursive calc:
 # y1 = y0 + hy0' = y0 + h * f(y0,t0)
 # f(y0,t0) = -r(Tc-Ts), where r = 0.025 per second, Tc is 84, Ts is 19
 # we will do forward euler iteratively because it's much easier to append to an array iteratively
+
+# note for the TA or teacher: i wrote this for  youplot and then realized that's a bad idea
 
 # vars and inputs
 
@@ -24,8 +30,8 @@ def forwardEuler(h: int):
         Tc = Tc+calculateTd(Tc, h)
         plot_values.append((current_step*h, Tc))
 
+# "explicit euler" but for simplicity I put h here. It doesn't really matter if it's here or in forwardEuler function.
 def calculateTd(cupTemp: float, h: int):
-    
     return (-r*h)*(cupTemp-Ts)
 
 # a subprocess acts like a terminal command, so we call youplot and give it some params
